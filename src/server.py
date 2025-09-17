@@ -23,14 +23,9 @@ if __name__ == "__main__":
     
     print(f"Starting FastMCP server on {host}:{port}")
     
-    # Add CORS and headers configuration for Poke compatibility
     mcp.run(
         transport="http",
         host=host,
         port=port,
-        stateless_http=True,
-        cors=True,  # Enable CORS
-        cors_allow_origins=["*"],  # Allow all origins (you can restrict this later)
-        cors_allow_methods=["GET", "POST", "OPTIONS"],
-        cors_allow_headers=["*"]
+        stateless_http=True
     )
